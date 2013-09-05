@@ -17,4 +17,6 @@ Vagrant.configure("2") do |config|
     chef.add_recipe 'brightbox::ruby'
   end
 
+  config.vm.synced_folder "#{ENV['HOME']}/Projects", "/projects"
+
 end
