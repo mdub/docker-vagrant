@@ -9,7 +9,7 @@ Vagrant.configure("2") do |config|
   config.berkshelf.enabled = true
 
   config.vm.provision :shell, :inline => <<-BASH
-    chef-solo --version | grep 'Chef: 11' || (apt-get -y install curl; curl -s -L https://www.opscode.com/chef/install.sh | bash)
+    chef-solo --version | grep 'Chef: 11' || (apt-get -y install curl; curl -s -L https://www.opscode.com/chef/install.sh | bash -s -- -v 11.4.2)
   BASH
 
   config.vm.provision :chef_solo do |chef|
